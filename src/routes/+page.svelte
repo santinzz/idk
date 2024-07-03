@@ -3,7 +3,7 @@
 
 	export let data: PageData;
 
-	const { session } = data;
+	const { session, user } = data;
 
 	import logo from '$lib/assets/logo.webp';
 	import { Button } from '@/components/ui/button';
@@ -17,7 +17,7 @@
 		<nav class="flex gap-4">
 			{#if session}
 				<Button>
-					<a href="/dashboard">Dashboard</a>
+					<a href={`/u/${user?.username}/boards`}>Dashboard</a>
 				</Button>
 				<form method="post">
 					<Button type="submit">Logout</Button>
